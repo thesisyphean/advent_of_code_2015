@@ -5,10 +5,11 @@ mod solutions;
 
 use solutions::day_1;
 use solutions::day_2;
+use solutions::day_3;
 
 fn main() {
-    match get_input("inputs/day_2.txt") {
-        Ok(input) => println!("{}", day_2::solve_part_2(&input)),
+    match get_input("inputs/day_3.txt") {
+        Ok(input) => println!("{}", day_3::solve_part_2(&input)),
         Err(error) => eprintln!("{}", error),
     }
 }
