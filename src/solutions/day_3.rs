@@ -73,7 +73,7 @@ fn parse_moves(input: &str) -> Vec<Move> {
         .collect()
 }
 
-pub fn solve_part_1(input: &str) -> usize {
+pub fn solve_part_1(input: &str) -> u32 {
     let moves = parse_moves(input);
 
     let mut visited_positions = HashSet::new();
@@ -85,10 +85,10 @@ pub fn solve_part_1(input: &str) -> usize {
         visited_positions.insert(position);
     }
 
-    visited_positions.len()
+    visited_positions.len() as u32
 }
 
-pub fn solve_part_2(input: &str) -> usize {
+pub fn solve_part_2(input: &str) -> u32 {
     let moves = parse_moves(input);
 
     let mut visited_positions = HashSet::new();
@@ -100,5 +100,5 @@ pub fn solve_part_2(input: &str) -> usize {
         visited_positions.insert(positions[i % 2]);
     }
 
-    visited_positions.len()
+    visited_positions.len() as u32
 }

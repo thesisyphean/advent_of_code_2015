@@ -7,13 +7,15 @@ fn parse_parentheses(input: &str) -> Vec<i32> {
         }).collect()
 }
 
-pub fn solve_part_1(input: &str) -> i32 {
+pub fn solve_part_1(input: &str) -> u32 {
+    // this conversion seems suspicious,
+    // but it is never negative
     parse_parentheses(input).into_iter()
-        .sum()
+        .sum::<i32>() as u32
 }
 
-pub fn solve_part_2(input: &str) -> usize {
-    parse_parentheses(input).into_iter()
+pub fn solve_part_2(input: &str) -> u32 {
+    (parse_parentheses(input).into_iter()
         .scan(0, |state, p| {
             *state += p;
 
@@ -22,5 +24,5 @@ pub fn solve_part_2(input: &str) -> usize {
             } else {
                 Some(*state)
             }
-        }).count() + 1
+        }).count() + 1) as u32
 }
